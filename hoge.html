@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヒストグラム表示</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>ヒストグラム</h1>
+  <canvas id="histogramCanvas" width="400" height="200"></canvas>
+
+  <script>
+    // JSONファイルの読み込み
+    fetch('/tmp/Zenith.json')
+      .then(response => response.json())
+      .then(data => {
+        // データを集計してヒストグラム用データに変換
+        const bins = {};
+        data.forEach(value => {
+          bins[value] = (bins[value] || 0) + 1;
+        });
+
+        // ラベルと値を取得
+        const labels = Object.keys(bins).map(Number);
+        const frequencies = Object.values(bins);
+
+        // Chart.jsを使ってヒストグラムを描画
+        const ctx = document.getElementById('histogramCanvas').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels, // x軸のラベル
+            datasets: [{
+              label: 'Frequency',
+              data: frequencies,
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'Value'
+                }
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'Frequency'
+                },
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading JSON:', error);
+      });
+  </script>
+</body>
+</html>
