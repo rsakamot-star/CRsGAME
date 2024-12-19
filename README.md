@@ -1,7 +1,6 @@
 # CRsGAME
+* LINK https://rsakamot-star.github.io/CRsGAME/
 
-*LINK https://rsakamot-star.github.io/CRsGAME/
+* 使い方
 
-*使い方
-
-**menu画面
+** menu画面
