@@ -1,43 +1,4 @@
 <body>
-  <!-- Pyxel.js を読み込む -->
-  <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
-
-  <!-- Pyxelゲームを埋め込む -->
-  <pyxel-play root="https://rsakamot-star.github.io/MainPythonFile" name="main.pyxapp"></pyxel-play>
-
-  <script>
-    let clickPerformed = false;  // クリックが実行されたかどうかのフラグ
-
-    // <pyxel-play> タグが読み込まれた後、ゲームが準備完了するのを待つ
-    document.querySelector('pyxel-play').addEventListener('load', function() {
-      // ここでゲームがロードされていることを確認できる
-      setTimeout(function() {
-        autoClick();
-      }, 5000);  // ゲームが読み込まれた後に1秒待つ
-    });
-
-    // 左クリックをシミュレートする関数
-    function autoClick() {
-      if (!clickPerformed) {
-        // Pyxelのゲームキャンバスを取得
-        const canvas = document.querySelector('canvas');
-        if (canvas) {
-          const rect = canvas.getBoundingClientRect();
-          const x = rect.left + rect.width / 2;  // キャンバス中央のx座標
-          const y = rect.top + rect.height / 2;  // キャンバス中央のy座標
-
-          // クリックイベントをシミュレート
-          const event = new MouseEvent('click', {
-            clientX: x,
-            clientY: y,
-            bubbles: true,
-            cancelable: true,
-          });
-          canvas.dispatchEvent(event);  // クリックイベントをキャンバスに発火
-          clickPerformed = true;
-          console.log("Auto left-click performed!");
-        }
-      }
-    }
-  </script>
+<script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+<pyxel-play root="https://rsakamot-star.github.io/MainPythonFile" name="main.pyxapp"></pyxel-play>
 </body>
