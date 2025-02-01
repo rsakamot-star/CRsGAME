@@ -1,41 +1,4 @@
 <body>
-  <!-- Pyxelのゲームを読み込むためのスクリプト -->
-  <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
-  
-  <!-- Pyxelのゲームを埋め込む -->
-  <pyxel-play root="https://rsakamot-star.github.io/MainPythonFile" name="main.pyxapp"></pyxel-play>
-
-  <script>
-    // ゲームが起動したかどうかのフラグ
-    let gameStarted = false;
-
-    // ゲームが開始されたかどうかをチェック
-    function onGameStart() {
-      if (!gameStarted) {
-        // pyxel.js が起動したら左クリックを待機
-        if (pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT)) {
-          gameStarted = true;  // 左クリックでゲーム開始
-          console.log("Game started!");
-        }
-      }
-    }
-
-    // ゲームが開始された後のクリック処理
-    function onClickToContinue() {
-      if (gameStarted) {
-        // ゲーム開始後、左クリックを待機
-        if (pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT)) {
-          console.log("Clicked after game started!");
-          // ここで次のアクション（例えば、次のステージなど）を実行
-        }
-      }
-    }
-
-    // pyxel.js のゲームが起動した後、クリックを待機
-    pyxel.run(function() {
-      onGameStart();    // ゲームが開始されたら左クリックを待機
-      onClickToContinue();  // ゲーム開始後、クリックで次のアクション
-    });
-
-  </script>
+<script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+<pyxel-play root="https://rsakamot-star.github.io/MainPythonFile" name="main.pyxapp"></pyxel-play>
 </body>
