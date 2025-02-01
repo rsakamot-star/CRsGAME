@@ -1,44 +1,44 @@
 <body>
+  <!-- Pyxel.jsを読み込む -->
   <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
 
-  <!-- Pyxel ゲームを埋め込む -->
+  <!-- Pyxelゲームを埋め込む -->
   <pyxel-play root="https://rsakamot-star.github.io/MainPythonFile" name="main.pyxapp"></pyxel-play>
 
   <script>
-    // Pyxel のゲームが開始された後に自動で左クリックを発生させる
+    // Pyxelゲームが開始された後に自動で左クリックを発生させる
     let gameStarted = false;
     let clickPerformed = false;
 
-    // Pyxelのゲームの初期化後、左クリックを自動で行う
-    function startAutoClick() {
-      // ゲームが開始されたかを確認
-      if (!gameStarted) {
-        // Pyxel.jsが起動した後、左クリックをシミュレートする
+    // Pyxelのゲームが読み込まれたかどうかを確認する
+    function checkGameReady() {
+      const canvas = document.querySelector('canvas');
+      if (canvas && !clickPerformed) {
+        // ゲームが開始されたら、1秒後に自動でクリックを発生させる
         setTimeout(() => {
-          const canvas = document.querySelector('canvas');  // Pyxelのゲームのキャンバス要素
-          if (canvas) {
-            const rect = canvas.getBoundingClientRect();
-            // キャンバス内でクリックしたい位置を指定
-            const x = rect.left + rect.width / 2;
-            const y = rect.top + rect.height / 2;
-            // 左クリックをシミュレート（クリック位置を設定）
-            const event = new MouseEvent('click', {
-              clientX: x,
-              clientY: y,
-              bubbles: true,
-              cancelable: true,
-            });
-            canvas.dispatchEvent(event);  // イベントをキャンバスに発火
-            clickPerformed = true;
-            console.log("Auto left-click performed!");
-          }
-        }, 1000);  // 1秒後にクリックを発生させる（遅延は調整可能）
+          const rect = canvas.getBoundingClientRect();
+          const x = rect.left + rect.width / 2;  // キャンバス中央のx座標
+          const y = rect.top + rect.height / 2;  // キャンバス中央のy座標
+
+          const event = new MouseEvent('click', {
+            clientX: x,
+            clientY: y,
+            bubbles: true,
+            cancelable: true,
+          });
+          canvas.dispatchEvent(event);  // クリックイベントを発火
+          clickPerformed = true;  // クリックしたことを記録
+          console.log("Auto left-click performed!");
+        }, 1000);  // 1秒後にクリックをシミュレート
+      } else {
+        // ゲームがまだロードされていない場合、少し待機して再確認
+        setTimeout(checkGameReady, 500);
       }
     }
 
-    // Pyxelのゲームが読み込まれたら自動クリックを開始
+    // ページが完全にロードされた後に自動クリックを開始
     window.onload = function() {
-      startAutoClick();
+      checkGameReady();  // ゲームが準備完了するまで待機してクリックを発生
     }
   </script>
 </body>
