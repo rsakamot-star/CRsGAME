@@ -1,5 +1,5 @@
 # CRsGAME
-![gif](https://github.com/rsakamot-star/CRsGAME/Videotogif.gif)
+![gif](https://github.com/rsakamot-star/CRsGAME/image/Videotogif.gif)
 ## 概要
 
 宇宙線空気シャワーを検出器で拾うスコアゲーム。制限時間は、30秒。生成している宇宙線は、テレスコープアレイ実験が測定した宇宙線の到来頻度を再現している[1]。 
