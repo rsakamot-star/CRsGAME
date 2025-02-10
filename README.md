@@ -5,7 +5,7 @@
 
 [1]T. Abu-Zayyad et.al., The Astrophysical Journal Letters, 768:L1 (5pp), 2013 May 1
 
-* 開発背景
+## 開発背景
 
 北半球最大の宇宙線観測実験であるテレスコープアレイ実験と、南半球をカバーする世界最大の宇宙線観測実験「Pierre Auger Observactory」が存在する。「Pierre Auger Observactory」では、観測したデータをオープンデータとして、公開している。そして、それを教育目的として、Unityで宇宙線空気シャワーのイメージを作成している。これのテレスコープアレイ実験バージョンも作りたいと思い、まず手始めに本ゲームの作成に取り掛かった。
 
