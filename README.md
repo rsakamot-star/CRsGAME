@@ -1,6 +1,6 @@
 # CRsGAME
 
-![gif](https://github.com/rsakamot-star/CRsGAME/image/Videotogif.gif)
+![gif](https://github.com/rsakamot-star/wiki/CRsGAME/image/Videotogif.gif)
 
 ## 概要
 
