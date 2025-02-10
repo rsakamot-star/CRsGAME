@@ -1,7 +1,6 @@
 # CRsGAME
 
-![gif](https://github.com/rsakamot-star/wiki/CRsGAME/image/Videotogif.gif)
-![demo](https://raw.github.com/wiki/takuyama29/WorldTracking/images/Untitled.gif)
+![demo](https://github.com/rsakamot-star/wiki/CRsGAME/image/Videotogif.gif)
 
 ## 概要
 
