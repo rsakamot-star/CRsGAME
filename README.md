@@ -3,7 +3,7 @@
 ![demo](https://github.com/rsakamot-star/CRsGAME/blob/main/image/Videotogif.gif)
 
 * ゲームリンク https://rsakamot-star.github.io/CRsGAME/
-** 3Dバージョン開発中 https://rsakamot-star.github.io/CosGAME-3Dver/
+* 3Dバージョン開発中 https://rsakamot-star.github.io/CosGAME-3Dver/
 * ランキング https://rsakamoto.pythonanywhere.com
 
 ## 概要
