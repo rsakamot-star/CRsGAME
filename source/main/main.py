@@ -380,7 +380,7 @@ class App:
         self.cpu = cpu(self)
         self.cpu_particles = []
         #self.atom = Atomic()
-        pyxel.mouse(False)
+        pyxel.mouse(True)
         pyxel.load('figures/star.pyxres')
         pyxel.run(self.update, self.draw)
     def update(self):
